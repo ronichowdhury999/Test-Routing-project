@@ -4,10 +4,14 @@ import Header from "../Pages/Header"
 
 const MainLayout = () => {
   return (
-    <div className="max-w-[1400px] mx-auto">
-        <Header/>
-       <Outlet/>
-       <Footer/>
+    <div>
+      <Header />
+      <div className="bg-[#010313]">
+        <div className="max-w-screen-xl mx-auto">
+          <Outlet />
+        </div>
+      </div>
+          <Footer />
     </div>
 
   )

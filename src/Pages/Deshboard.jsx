@@ -1,8 +1,8 @@
 
 const Deshboard = () => {
   return (
-    <div className="bg-red-500">
-        Deshboard
+    <div>
+      <h1>deshboard</h1>
     </div>
   )
 }

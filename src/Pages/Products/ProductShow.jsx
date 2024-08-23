@@ -2,36 +2,44 @@ import { useNavigate } from "react-router-dom"
 import PropTypes from 'prop-types';
 
 const ProductShow = ({ product }) => {
-    const { id, brand, category, description, thumbnail, price } = product || {}
+    console.log(product);
+    const { id, title, thumbnail, price } = product || {}
     const navigate = useNavigate()
     const handelSingleItemNavigate = () => {
         const user = true
         if (user) {
             navigate(`/product/${id}`)
         }
-        else{
+        else {
             navigate('/')
         }
     }
+    const sliceCondition = title.length > 10;
     return (
-        <div>
-            <div className="p-4 shadow-lg">
-                <h1 className="text-2xl font-bold">{brand}</h1>
+        <button className="cursor-pointer" onClick={handelSingleItemNavigate}>
+            <div className=" text-white hover:bg-purple-800 p-4 bg-[#270f43] rounded-lg shadow-lg w-[200px] h-[300px]">
                 <div>
-                    <img className="w-[200px] h-52 mb-2" src={
+                    <img className="w-[200px]" src={
                         thumbnail} alt="img" />
-                    <h3 className="text-2xl font-bold">{category}</h3>
+                    <h1 className="font-bold mb-2">{sliceCondition ? title.slice(0, 25) + '...' : title}</h1>
+                    <p className="font-semibold">P : {price}</p>
                 </div>
-                <p className="mb-2">{description}</p>
-                <div className="flex justify-between items-center">
-                    <p className="text-xl font-semibold">P : {price}</p>
-                    <div>
-                        {/* <Link to={`/product/${id}`}><button  className="py-2 px-4 bg-cyan-600 text-white rounded-lg cursor-pointer">View Details</button></Link> */}
-                        <button onClick={handelSingleItemNavigate} className="py-2 px-4 bg-cyan-600 text-white rounded-lg cursor-pointer">View Details</button>
-                    </div>
+                <div className="rating rating-xs">
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
+                    <input
+                        type="radio"
+                        name="rating-5"
+                        className="mask mask-star-2 bg-orange-400"
+                        defaultChecked />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
                 </div>
+                {/* <div> */}
+                {/* <Link to={`/product/${id}`}><button  className="py-2 px-4 bg-cyan-600 text-white rounded-lg cursor-pointer">View Details</button></Link> */}
+                {/* </div> */}
             </div>
-        </div>
+        </button>
     )
 }
 

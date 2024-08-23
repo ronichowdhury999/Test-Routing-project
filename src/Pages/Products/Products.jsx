@@ -5,7 +5,7 @@ const Products = () => {
 
     const { products } = useLoaderData()
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+        <div className=" grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-2 pt-4 pb-4">
             {
                 products?.map(product => <ProductShow key={product.id} product={product}/>)
             }
