@@ -12,7 +12,6 @@ const Product = () => {
         const newAddCard = [...showCard, product]
         setShowCard(newAddCard)
     }
-    console.log(showCard);
     return (
         <div className="lg:flex flex-col lg:flex-row md:flex-row ">
             <div className="w-[70%]">

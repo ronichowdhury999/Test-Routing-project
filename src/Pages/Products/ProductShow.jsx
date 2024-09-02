@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import PropTypes from 'prop-types';
 
 const ProductShow = ({ product }) => {
-    console.log(product);
     const { id, title, thumbnail, price } = product || {}
     const navigate = useNavigate()
     const handelSingleItemNavigate = () => {
