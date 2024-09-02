@@ -8,12 +8,14 @@ import Product from "../Pages/Products/Product"
 import DeshboardLayout from "../Layout/DeshboardLayout"
 import Profile from "../Pages/Profile"
 import ProfileEdit from "../Pages/ProfileEdit"
+import ErrorPage from "../Ui/ErrorPage"
 
 
 const Routes=createBrowserRouter([
     {
         path:'/',
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:'/',
